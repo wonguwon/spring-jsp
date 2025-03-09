@@ -56,6 +56,42 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!--
+			jsp모듈
+			Spring Boot는 JSP 템플릿 엔진을 기본적으로 지원하지 않기에 아래와 같은 정보를
+			application.properties 혹은 application.yml에 설정해서 Spring Boot에게
+			JSP 뷰의 경로를 알려줘야 한다.
+		-->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.servlet.jsp.jstl</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+		</dependency>
+
+		<!-- spring-boot-devtools
+		1. preferences > 컴파일러 > 프로젝트 자동 빌드를 체크
+		2. 고급설정 - 컴파일러에서 auto-make(자동빌드) 허용을 체크
+		3. 우측 상단에 구성 편집을 클릭 -> 옵션수정 -> update 작업 시 > 클래스 및 리소스 업데이트
+																					 -> 프레임 비활성 시 > 클래스 및 리소스 업데이트
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
